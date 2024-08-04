@@ -1,26 +1,28 @@
 using Microsoft.Extensions.Configuration;
 
-namespace PhoneBook;
-
-internal static class Program
+namespace PhoneBook
 {
-    public static MainForm MainFormInstance { get; private set; }
-    public static IConfiguration Configuration { get; private set; }
-
-    /// <summary>
-    ///  The main entry point for the application.
-    /// </summary>
-    [STAThread]
-    static void Main()
+    internal static class Program
     {
-        var builder = new ConfigurationBuilder()
-            .SetBasePath(Directory.GetCurrentDirectory())
-            .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
+        public static MainForm MainFormInstance { get; private set; }
+        public static IConfiguration Configuration { get; private set; }
 
-        Configuration = builder.Build();
-        ApplicationConfiguration.Initialize();
+        /// <summary>
+        ///  The main entry point for the application.
+        /// </summary>
+        [STAThread]
+        static void Main()
+        { 
+            var builder = new ConfigurationBuilder()
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("appsettings.json",
+                optional: true, // dosya yoksai devam et. hata verme
+                reloadOnChange: true);
 
-        MainFormInstance = new MainForm();
-        Application.Run(MainFormInstance);
+            Configuration = builder.Build();
+            ApplicationConfiguration.Initialize();
+            MainFormInstance = new MainForm();
+            Application.Run(MainFormInstance);
+        }
     }
 }

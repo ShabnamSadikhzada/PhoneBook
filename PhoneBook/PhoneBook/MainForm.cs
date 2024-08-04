@@ -1,30 +1,28 @@
 ﻿using MetroFramework.Forms;
 
-namespace PhoneBook;
-
-public partial class MainForm : MetroForm
+namespace PhoneBook
 {
-    public MainForm()
+    public partial class MainForm : MetroForm
     {
-        InitializeComponent();
-    }
+        public MainForm()
+        {
+            InitializeComponent();
+        }
 
-    private void btnSave_Click(object sender, EventArgs e)
-    {
-        Form1 form = new Form1();
-        Program.MainFormInstance.Hide();
-        form.ShowDialog();
-    }
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            Form1 frm = new Form1();
+            Program.MainFormInstance.Hide();
+            frm.ShowDialog();
+        }
 
-    private void btnSearch_Click(object sender, EventArgs e)
-    {
+        private void btnSearch_Click(object sender, EventArgs e) { }
 
-    }
-
-    private void btnList_Click(object sender, EventArgs e)
-    {
-        ListForm form = new ListForm();
-        this.Hide();
-        form.ShowDialog();
+        private void btnList_Click(object sender, EventArgs e)
+        {
+            ListForm frm = new ListForm();
+            Program.MainFormInstance.Hide();
+            frm.ShowDialog();
+        }
     }
 }

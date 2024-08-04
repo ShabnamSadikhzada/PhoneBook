@@ -1,80 +1,49 @@
 ﻿using MetroFramework.Forms;
 using Microsoft.Extensions.Configuration;
+using PhoneBook.Data;
 using PhoneBook.Models;
-using System.Data;
-using System.Data.SqlClient;
 
 namespace PhoneBook
 {
     public partial class EditForm : MetroForm
     {
 
-        private string _id;
-        public EditForm(string Id)
+        private int _id;
+        public EditForm(int Id)
         {
             _id = Id;
             InitializeComponent();
         }
 
-
-        string connection = Program.Configuration.GetConnectionString("default");
+        string connection =  Program.Configuration.GetConnectionString("default");
+        ApplicationDbContext context = new();
+        
         private void EditForm_Load(object sender, EventArgs e)
         {
-            using SqlConnection con = new(connection);
-            using SqlCommand cmd = new();
-            cmd.Connection = con;
-            cmd.CommandText = "SELECT  [Id], [FirstName], [LastName], [Phone], [Mail] FROM People WHERE [Id] = @Id";
-            cmd.Parameters.AddWithValue("@Id", _id);
-            cmd.CommandType = CommandType.Text;
+            Person person = context.People.FirstOrDefault(p => p.Id == _id);
 
-            if (con.State == ConnectionState.Closed)
+            if(person != null)
             {
-                con.Open();
-            }
-
-            using SqlDataReader dr = cmd.ExecuteReader();
-            if (dr.Read())
-            {
-                txtFirstName.Text = dr["FirstName"] as string;
-                txtLastName.Text = dr["LastName"] as string;
-                txtPhone.Text = dr["Phone"] as string;
-                txtMail.Text = dr["Mail"] as string;
-            }
-
-            con.Close();
+                txtFirstName.Text = person.FirstName;
+                txtLastName.Text = person.LastName;
+                txtPhone.Text = person.Phone;
+                txtMail.Text = person.Mail;
+            } 
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            using SqlConnection con = new SqlConnection(connection);
+            Person person = context.People.FirstOrDefault(p => p.Id == _id);
 
-            using SqlCommand cmd = new SqlCommand();
-            cmd.Connection = con;
+            person.FirstName = txtFirstName.Text;
+            person.LastName = txtLastName.Text;
+            person.Phone = txtPhone.Text;
+            person.Mail = txtMail.Text;
 
-            cmd.CommandText = "UPDATE People SET FirstName = @firstName, LastName = @lastName, Mail = @mail, Phone = @phone WHERE [Id] = @Id";
+            context.People.Update(person);
+            context.SaveChanges();
+            this.Close();
 
-            cmd.Parameters.Add("@Id", SqlDbType.Int).Value = _id;
-            cmd.Parameters.Add("@firstName", SqlDbType.NVarChar, 100).Value = txtFirstName.Text;
-            cmd.Parameters.Add("@lastName", SqlDbType.NVarChar, 100).Value = txtLastName.Text;
-            cmd.Parameters.Add("@phone", SqlDbType.NVarChar, 30).Value = txtPhone.Text;
-            cmd.Parameters.Add("@mail", SqlDbType.NVarChar, 100).Value = txtMail.Text;
-
-
-            cmd.CommandType = CommandType.Text;
-
-
-            if (con.State == ConnectionState.Closed)
-            {
-                con.Open();
-            }
-            bool result = cmd.ExecuteNonQuery() > 0;
-            con.Close();
-
-
-            if (result)
-            {
-                this.Close();
-            }
         }
     }
 }

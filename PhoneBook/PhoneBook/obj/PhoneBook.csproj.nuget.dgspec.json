@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\shabnamjs\\source\\repos\\PhoneBook\\PhoneBook\\PhoneBook.csproj": {}
+    "C:\\Users\\Alicavad\\Desktop\\Shabnam\\CodeAcademy\\PhoneBook\\PhoneBook\\PhoneBook.csproj": {}
   },
   "projects": {
-    "C:\\Users\\shabnamjs\\source\\repos\\PhoneBook\\PhoneBook\\PhoneBook.csproj": {
+    "C:\\Users\\Alicavad\\Desktop\\Shabnam\\CodeAcademy\\PhoneBook\\PhoneBook\\PhoneBook.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\shabnamjs\\source\\repos\\PhoneBook\\PhoneBook\\PhoneBook.csproj",
+        "projectUniqueName": "C:\\Users\\Alicavad\\Desktop\\Shabnam\\CodeAcademy\\PhoneBook\\PhoneBook\\PhoneBook.csproj",
         "projectName": "PhoneBook",
-        "projectPath": "C:\\Users\\shabnamjs\\source\\repos\\PhoneBook\\PhoneBook\\PhoneBook.csproj",
-        "packagesPath": "C:\\Users\\shabnamjs\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\shabnamjs\\source\\repos\\PhoneBook\\PhoneBook\\obj\\",
+        "projectPath": "C:\\Users\\Alicavad\\Desktop\\Shabnam\\CodeAcademy\\PhoneBook\\PhoneBook\\PhoneBook.csproj",
+        "packagesPath": "C:\\Users\\Alicavad\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Alicavad\\Desktop\\Shabnam\\CodeAcademy\\PhoneBook\\PhoneBook\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\shabnamjs\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Alicavad\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,7 +22,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -39,11 +34,6 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -53,6 +43,26 @@
             "MetroModernUI": {
               "target": "Package",
               "version": "[1.4.0, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[8.0.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.7, )"
             },
             "Microsoft.Extensions.Configuration": {
               "target": "Package",
@@ -86,7 +96,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300-preview.24203.14/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

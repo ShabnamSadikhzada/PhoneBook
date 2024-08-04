@@ -53,107 +53,94 @@
             grbSavePerson.Controls.Add(txtFirstName);
             grbSavePerson.Controls.Add(label1);
             grbSavePerson.Font = new Font("Segoe UI", 15F);
-            grbSavePerson.Location = new Point(23, 24);
+            grbSavePerson.Location = new Point(23, 63);
             grbSavePerson.Name = "grbSavePerson";
-            grbSavePerson.Size = new Size(345, 309);
+            grbSavePerson.Size = new Size(516, 314);
             grbSavePerson.TabIndex = 1;
             grbSavePerson.TabStop = false;
-            grbSavePerson.Text = "Kişi düzenle";
             // 
             // btnSave
             // 
-            btnSave.BackColor = Color.Blue;
-            btnSave.Font = new Font("Segoe UI", 12F);
-            btnSave.ForeColor = Color.White;
-            btnSave.Location = new Point(127, 217);
+            btnSave.Location = new Point(145, 229);
             btnSave.Name = "btnSave";
-            btnSave.Size = new Size(158, 50);
-            btnSave.TabIndex = 5;
+            btnSave.Size = new Size(349, 59);
+            btnSave.TabIndex = 4;
             btnSave.Text = "Düzenle";
-            btnSave.UseVisualStyleBackColor = false;
+            btnSave.UseVisualStyleBackColor = true;
             btnSave.Click += btnSave_Click;
             // 
             // txtMail
             // 
-            txtMail.Font = new Font("Segoe UI", 12F);
-            txtMail.Location = new Point(111, 163);
+            txtMail.Location = new Point(145, 189);
             txtMail.Name = "txtMail";
-            txtMail.Size = new Size(203, 29);
-            txtMail.TabIndex = 4;
+            txtMail.Size = new Size(349, 34);
+            txtMail.TabIndex = 3;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 12F);
-            label4.Location = new Point(14, 169);
+            label4.Location = new Point(20, 192);
             label4.Name = "label4";
-            label4.Size = new Size(40, 21);
+            label4.Size = new Size(50, 28);
             label4.TabIndex = 0;
             label4.Text = "Mail";
             // 
             // txtPhone
             // 
-            txtPhone.Font = new Font("Segoe UI", 12F);
-            txtPhone.Location = new Point(111, 123);
+            txtPhone.Location = new Point(145, 149);
             txtPhone.Name = "txtPhone";
-            txtPhone.Size = new Size(203, 29);
-            txtPhone.TabIndex = 3;
+            txtPhone.Size = new Size(349, 34);
+            txtPhone.TabIndex = 2;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 12F);
-            label3.Location = new Point(14, 129);
+            label3.Location = new Point(20, 152);
             label3.Name = "label3";
-            label3.Size = new Size(59, 21);
+            label3.Size = new Size(74, 28);
             label3.TabIndex = 0;
             label3.Text = "Telefon";
             // 
             // txtLastName
             // 
-            txtLastName.Font = new Font("Segoe UI", 12F);
-            txtLastName.Location = new Point(111, 83);
+            txtLastName.Location = new Point(145, 109);
             txtLastName.Name = "txtLastName";
-            txtLastName.Size = new Size(203, 29);
-            txtLastName.TabIndex = 2;
+            txtLastName.Size = new Size(349, 34);
+            txtLastName.TabIndex = 1;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 12F);
-            label2.Location = new Point(14, 89);
+            label2.Location = new Point(20, 112);
             label2.Name = "label2";
-            label2.Size = new Size(57, 21);
+            label2.Size = new Size(72, 28);
             label2.TabIndex = 0;
             label2.Text = "Soyadı";
             // 
             // txtFirstName
             // 
-            txtFirstName.Font = new Font("Segoe UI", 12F);
-            txtFirstName.Location = new Point(111, 43);
+            txtFirstName.Location = new Point(145, 69);
             txtFirstName.Name = "txtFirstName";
-            txtFirstName.Size = new Size(203, 29);
-            txtFirstName.TabIndex = 1;
+            txtFirstName.Size = new Size(349, 34);
+            txtFirstName.TabIndex = 0;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 12F);
-            label1.Location = new Point(14, 49);
+            label1.Location = new Point(20, 72);
             label1.Name = "label1";
-            label1.Size = new Size(33, 21);
+            label1.Size = new Size(47, 28);
             label1.TabIndex = 0;
-            label1.Text = "Adı";
+            label1.Text = "Adı ";
             // 
             // EditForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(391, 356);
+            ClientSize = new Size(562, 408);
             Controls.Add(grbSavePerson);
             Name = "EditForm";
-            Resizable = false;
-            Text = "EditForm";
+            Text = "Kişi Düzenleme Formu";
             Load += EditForm_Load;
             grbSavePerson.ResumeLayout(false);
             grbSavePerson.PerformLayout();

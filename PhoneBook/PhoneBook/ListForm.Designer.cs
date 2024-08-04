@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListForm));
             lstPeople = new ListView();
             columnHeader1 = new ColumnHeader();
             columnHeader2 = new ColumnHeader();
@@ -38,6 +39,7 @@
             contextMenuStrip1 = new ContextMenuStrip(components);
             cmsEdit = new ToolStripMenuItem();
             cmsSil = new ToolStripMenuItem();
+            toolStripSeparator1 = new ToolStripSeparator();
             cmsRefresh = new ToolStripMenuItem();
             contextMenuStrip1.SuspendLayout();
             SuspendLayout();
@@ -47,11 +49,13 @@
             lstPeople.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3, columnHeader4, columnHeader5 });
             lstPeople.ContextMenuStrip = contextMenuStrip1;
             lstPeople.Dock = DockStyle.Fill;
+            lstPeople.Font = new Font("Perpetua Titling MT", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lstPeople.FullRowSelect = true;
             lstPeople.GridLines = true;
-            lstPeople.Location = new Point(20, 60);
+            lstPeople.Location = new Point(23, 80);
+            lstPeople.Margin = new Padding(3, 4, 3, 4);
             lstPeople.Name = "lstPeople";
-            lstPeople.Size = new Size(624, 378);
+            lstPeople.Size = new Size(922, 493);
             lstPeople.TabIndex = 0;
             lstPeople.UseCompatibleStateImageBehavior = false;
             lstPeople.View = View.Details;
@@ -73,53 +77,60 @@
             // columnHeader4
             // 
             columnHeader4.Text = "Phone";
-            columnHeader4.Width = 100;
+            columnHeader4.Width = 120;
             // 
             // columnHeader5
             // 
             columnHeader5.Text = "Mail";
-            columnHeader5.Width = 150;
+            columnHeader5.Width = 300;
             // 
             // contextMenuStrip1
             // 
-            contextMenuStrip1.Items.AddRange(new ToolStripItem[] { cmsEdit, cmsSil, cmsRefresh });
+            contextMenuStrip1.ImageScalingSize = new Size(20, 20);
+            contextMenuStrip1.Items.AddRange(new ToolStripItem[] { cmsEdit, cmsSil, toolStripSeparator1, cmsRefresh });
             contextMenuStrip1.Name = "contextMenuStrip1";
-            contextMenuStrip1.Size = new Size(117, 70);
+            contextMenuStrip1.Size = new Size(215, 116);
             // 
             // cmsEdit
             // 
-            cmsEdit.Image = Properties.Resources.edit;
+            cmsEdit.Image = (Image)resources.GetObject("cmsEdit.Image");
             cmsEdit.Name = "cmsEdit";
-            cmsEdit.Size = new Size(116, 22);
+            cmsEdit.Size = new Size(214, 26);
             cmsEdit.Text = "Düzenle";
             cmsEdit.Click += cmsEdit_Click;
             // 
             // cmsSil
             // 
-            cmsSil.Image = Properties.Resources.trash;
+            cmsSil.Image = (Image)resources.GetObject("cmsSil.Image");
             cmsSil.Name = "cmsSil";
-            cmsSil.Size = new Size(116, 22);
+            cmsSil.Size = new Size(214, 26);
             cmsSil.Text = "Sil";
             cmsSil.Click += cmsSil_Click;
             // 
+            // toolStripSeparator1
+            // 
+            toolStripSeparator1.Name = "toolStripSeparator1";
+            toolStripSeparator1.Size = new Size(211, 6);
+            // 
             // cmsRefresh
             // 
-            cmsRefresh.Image = Properties.Resources.refresh;
+            cmsRefresh.Image = (Image)resources.GetObject("cmsRefresh.Image");
             cmsRefresh.Name = "cmsRefresh";
-            cmsRefresh.Size = new Size(116, 22);
+            cmsRefresh.Size = new Size(214, 26);
             cmsRefresh.Text = "Yenile";
             cmsRefresh.Click += cmsRefresh_Click;
             // 
             // ListForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(664, 458);
+            ClientSize = new Size(968, 600);
             Controls.Add(lstPeople);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "ListForm";
-            Text = "Kişi Listesi";
+            Padding = new Padding(23, 80, 23, 27);
+            Text = "ListForm";
             FormClosing += ListForm_FormClosing;
-            FormClosed += ListForm_FormClosed;
             Load += ListForm_Load;
             contextMenuStrip1.ResumeLayout(false);
             ResumeLayout(false);
@@ -137,5 +148,6 @@
         private ToolStripMenuItem cmsEdit;
         private ToolStripMenuItem cmsSil;
         private ToolStripMenuItem cmsRefresh;
+        private ToolStripSeparator toolStripSeparator1;
     }
 }

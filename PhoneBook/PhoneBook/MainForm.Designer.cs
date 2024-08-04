@@ -35,13 +35,13 @@
             // 
             // btnSave
             // 
-            btnSave.BackColor = Color.Teal;
+            btnSave.BackColor = Color.FromArgb(90, 99, 156);
             btnSave.Cursor = Cursors.Hand;
-            btnSave.Font = new Font("Segoe UI", 15F);
-            btnSave.ForeColor = Color.White;
-            btnSave.Location = new Point(23, 72);
+            btnSave.Font = new Font("Segoe UI", 20F);
+            btnSave.ForeColor = SystemColors.ButtonHighlight;
+            btnSave.Location = new Point(23, 78);
             btnSave.Name = "btnSave";
-            btnSave.Size = new Size(187, 318);
+            btnSave.Size = new Size(212, 338);
             btnSave.TabIndex = 0;
             btnSave.Text = "Kişi Ekle";
             btnSave.UseVisualStyleBackColor = false;
@@ -49,44 +49,42 @@
             // 
             // btnList
             // 
-            btnList.BackColor = Color.FromArgb(128, 128, 255);
-            btnList.Cursor = Cursors.Hand;
-            btnList.Font = new Font("Segoe UI", 15F);
-            btnList.ForeColor = Color.White;
-            btnList.Location = new Point(216, 235);
+            btnList.BackColor = Color.FromArgb(255, 64, 125);
+            btnList.Cursor = Cursors.SizeAll;
+            btnList.Font = new Font("Segoe UI", 20F);
+            btnList.ForeColor = SystemColors.ButtonHighlight;
+            btnList.Location = new Point(241, 249);
             btnList.Name = "btnList";
-            btnList.Size = new Size(287, 155);
-            btnList.TabIndex = 0;
+            btnList.Size = new Size(328, 165);
+            btnList.TabIndex = 1;
             btnList.Text = "Kişi Listesi";
             btnList.UseVisualStyleBackColor = false;
             btnList.Click += btnList_Click;
             // 
             // btnSearch
             // 
-            btnSearch.BackColor = Color.FromArgb(10, 128, 255);
-            btnSearch.Cursor = Cursors.Hand;
-            btnSearch.Font = new Font("Segoe UI", 15F);
-            btnSearch.ForeColor = Color.White;
-            btnSearch.Location = new Point(216, 72);
+            btnSearch.BackColor = Color.FromArgb(55, 183, 195);
+            btnSearch.Cursor = Cursors.Help;
+            btnSearch.Font = new Font("Segoe UI", 20F);
+            btnSearch.ForeColor = SystemColors.ButtonHighlight;
+            btnSearch.Location = new Point(241, 78);
             btnSearch.Name = "btnSearch";
-            btnSearch.Size = new Size(287, 155);
-            btnSearch.TabIndex = 0;
+            btnSearch.Size = new Size(328, 165);
+            btnSearch.TabIndex = 2;
             btnSearch.Text = "Kişi Arama";
             btnSearch.UseVisualStyleBackColor = false;
             btnSearch.Click += btnSearch_Click;
             // 
             // MainForm
             // 
-            AccessibleRole = AccessibleRole.Clock;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(526, 411);
+            BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
+            ClientSize = new Size(594, 450);
             Controls.Add(btnSearch);
             Controls.Add(btnList);
             Controls.Add(btnSave);
-            Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             Name = "MainForm";
-            Resizable = false;
             Text = "Telefon Rehberi";
             ResumeLayout(false);
         }
